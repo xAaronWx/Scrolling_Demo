@@ -1,0 +1,8 @@
+.site-nav .nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.site-nav .nav-link::before {
+  content: ">";
+}
