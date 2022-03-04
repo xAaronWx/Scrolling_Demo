@@ -22,4 +22,4 @@ This repository comes with a live reload server that uses gulp.js as a convenien
 1. `npm install`
 1. `npm start`
 
-This is also a new a copy to my own repo.
+This is also a new copy to my own repo.
