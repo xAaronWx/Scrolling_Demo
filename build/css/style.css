@@ -1,5 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .site-nav {
   z-index: 20;
+}
+
+.site-nav.in-body {
+  background: rgba(99, 64, 145, 0.9);
+  animation: clear 1.25s forwards;
+  opacity: 0;
 }
 
 .site-header {
@@ -63,6 +73,8 @@
 }
 
 .site-header .header-cue {
+  position: absolute;
+  bottom: 0;
   animation: clear 0.5s 1.5s forwards;
   transform: translateY(2rem);
   z-index: 10;
@@ -73,6 +85,12 @@
   animation: slide-down 0.5s 1.8s forwards, pulse 1.5s 2.5s ease-in-out infinite;
   transform: translateY(-2rem);
   opacity: 1;
+}
+
+.appear {
+  animation: clear 1s 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 /* This keyframe is a reset to original positions for animation. Be sure to apply the settings to targets accordingly */
