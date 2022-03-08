@@ -1,8 +1,45 @@
+.site-nav {
+  z-index: 20;
+}
+
+.site-header {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(180deg, rgb(103, 66, 150), rgb(54, 28, 88));
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background-image: url(../images/hero.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /* background-attachment: fixed; */
+}
+
 .site-nav .nav-link {
   position: relative;
   padding-bottom: 2px;
 }
 
 .site-nav .nav-link::before {
-  content: ">";
+  content: "";
+  position: absolute;
+  width: 100%;
+  max-width: 100px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+}
+
+.site-nav .nav-link:hover::before {
+  visibility: visible;
 }
