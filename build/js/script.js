@@ -48,4 +48,16 @@ $(function () {
     window.requestAnimationFrame(moveHeader);
   }
   window.requestAnimationFrame(moveHeader);
+
+  // Below scripts are to be used with the Scroll Magic plug-ins
+  let controller = new ScrollMagic.Controller();
+
+  new ScrollMagic.Scene({
+    triggerElement: "#friend",
+    triggerHook: 0.5,
+    offset: 100,
+  })
+    .setClassToggle(".friend-text", "appear")
+    // .addIndicators({ name: "friends" })
+    .addTo(controller);
 });

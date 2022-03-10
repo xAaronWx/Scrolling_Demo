@@ -93,6 +93,10 @@ html {
   transform: scale(0.9);
 }
 
+.friend-text {
+  opacity: 0;
+}
+
 /* This keyframe is a reset to original positions for animation. Be sure to apply the settings to targets accordingly */
 @keyframes clear {
   to {
