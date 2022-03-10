@@ -8,6 +8,10 @@ $(function () {
   let meetMonsters = document.querySelector("#meet");
   let monsterScroll = document.querySelectorAll("#monster-group .monster");
 
+  monsterScroll.forEach(
+    (item) => (item.style.animationDelay = `${Math.random() * 0.1 + 0.6}s`) // This acts as a time delay for the images to display on the site
+  );
+
   function inViewPort(el) {
     let rect = el.getBoundingClientRect();
     return (
