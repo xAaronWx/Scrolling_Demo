@@ -51,13 +51,70 @@ $(function () {
 
   // Below scripts are to be used with the Scroll Magic plug-ins
   let controller = new ScrollMagic.Controller();
+  // This helps control the animation
+  let friendTextTween = TweenMax.from(".friend-text", {
+    y: 400,
+    opacity: 0,
+    // duration: 2,
+    // ease: "elastic.inOut",
+  });
 
   new ScrollMagic.Scene({
     triggerElement: "#friend",
-    triggerHook: 0.5,
-    offset: 100,
+    duration: "100%",
+    triggerHook: 0,
+    // triggerHook: 0.5,
+    // offset: 100,
   })
-    .setClassToggle(".friend-text", "appear")
+    .setTween(friendTextTween)
+    .setPin("#friend")
     // .addIndicators({ name: "friends" })
     .addTo(controller);
-});
+
+  // New Animation for the parachute in the friend zone (Good example for new animations)
+  let parachuteTween = new TimelineMax();
+  parachuteTween
+    .from("#parachute", {
+      scale: 0.5,
+      opacity: 0.25,
+      rotation: -40,
+      x: "100%",
+      y: "-200%",
+    })
+    .to("#parachute", {
+      x: "30%",
+      y: "20%",
+      rotation: -30,
+    })
+    .to("#parachute", {
+      x: "-80%",
+      y: "250%",
+      rotation: 30,
+    });
+
+  new ScrollMagic.Scene({
+    triggerElement: "#friend",
+    duration: "170%",
+    triggerHook: 0,
+  })
+    .setTween(parachuteTween)
+    // This adds indicators to the webpage to see where your breaks are
+    // .addIndicators({ name: "Parachute" })
+    .addTo(controller);
+
+  // Monster Types Animation
+  let typesTween = new TimelineMax();
+  typesTween.from("#types .col", {
+    scale: 0.5,
+    opacity: 0,
+    stagger: 0.5,
+  });
+  new ScrollMagic.Scene({
+    triggerElement: "#types",
+    triggerHook: 0,
+    duration: 300,
+  })
+    .setPin("#types")
+    .setTween(typesTween)
+    .addTo(controller);
+}); //When page loads
